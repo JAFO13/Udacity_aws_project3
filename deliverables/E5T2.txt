@@ -1,0 +1,30 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+
+Checkov - https://www.checkov.io/
+TFLint - https://github.com/terraform-linters/tflint
+Terrafirma - https://github.com/wayfair/terrafirma
+Accurics - https://www.accurics.com/products/accurics/
+CloudSploit - https://www.accurics.com/products/accurics/
+
+### Example vulnerability
+
+Sensitive date in plaintext (password, secrets, etc.)
+
+##Scan AMI’s or containers for OS vulnerabilities
+
+Clair - https://github.com/quay/clair
+Dagda - https://github.com/eliasgranderubio/dagda/
+Aqua - https://www.aquasec.com/products/container-vulnerability-scanning/
+Qualys - https://www.qualys.com/apps/container-security/
+
+### Example vulnerability
+
+anything found in the Common Vulnerabilities and Exposure database (CVE)
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+
+
+### Example vulnerability

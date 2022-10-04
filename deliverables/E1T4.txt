@@ -1,0 +1,9 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+
+The first poor practice I see is using port 80.  While they are "free" recipes you still don't want the information tampered with by using a man in the middle attack.  Everything is in clear text from the client to the application server.
+
+# Poor practice 2
+
+Further review of the permissions for the role creation show full access to all of s3.  A breach of the role could allow for access to all buckets in the region as well as the ability to create new buckets and delete existing buckets and associated data.

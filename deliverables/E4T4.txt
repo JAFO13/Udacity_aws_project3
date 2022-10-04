@@ -1,0 +1,26 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+
+1. Separate the web server and application server into distinct EC2 instances.
+   a. Deploy web server in a separate private subnet
+   b. Deploy application server in a separate private subnet
+2. Deploy a NAT gateway in the public subnet.
+3. Implement autoscaling in both web server and application tiers
+4. Implement EFS for shared storage between application servers. 
+
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+
+Yes.  By using route tables to control access or bucket policies to restrict by implementing VPC private endpoints you could provide another level of protection for your S3 resources.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+
+No.  It will only apply to new uploads.  
+
+# What would happen if the original cloud formation templates are applied to this environment.
+
+Since the original environment was built with that cloud formation template, an attempt to apply them would create many problems.  It would be best to run drift detection to see what was changed.  After that, update and test the cloud formation templates to include the changes made to the environment to secure it.
+
+
+
+

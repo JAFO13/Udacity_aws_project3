@@ -1,0 +1,7 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+There were two findings.  A low and a high.  The low finding was the server being attacked with an "UnauthorizedAccess:EC2/SSHBruteForce" attack.  The high finding was the server doing the attacking.  Same finding, but since this was the machine performing the attack, AWS gave it a higher severity.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+According to the documentation, AWS GuardDuty will use the VPC Flow Logs to detect this type of attack.  This is why it is important to ensure that all VPCs have flow logs enabled and monitored.

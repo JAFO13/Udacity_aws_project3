@@ -1,0 +1,15 @@
+
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+
+The first thing to do modify the sshd_config file on the application server and make sure the changes are carried over to new AMIs.  
+
+The second is to remove the ALLOW ALL rule to port 22 in the security group.
+
+The next change would be to implement a bastion host and restrict that EC2 instance to a specific set of IP addresses.  You would then modify the existing security group for the application server and only allow port 22 from within the same subnet (bastion host).  
+
+Finally, I would implement AWS WAF and the other security tools built into the environment to identify and prevent attacks such as these.
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+
+The first thing would be to block all public access.  After that, create a new role for access to the S3 bucket and then modify the bucket policy to only allow access to that role.  Ensure that the API credentials don't have access to that policy.

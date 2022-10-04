@@ -1,0 +1,8 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+There were quite a few vulnerabilities present in the code that was deployed.  Port 22 is reachable from the Internet on both instances.  A bastion server should be installed in to allow admins access to the servers and block access within the security group to the ec2 instances.  The ALL:ALL rule for the WebAppSG should be removed immediately.  Longer term updates should include setting up a bastion host for port 22 access and removing that rule as well.  Lastly, implement TLS security and enforce traffic only on 443.  Route traffic from port 80 to 443 at the load balancer.
+
+Another vulnerability that needs immediate attention is the public access to the S3 buckets created.  At a minimum block public access and setup an access control list to permit traffic.  Buckets should also be encrypted and bucket versioning turned on in order to prevent complete destruction of data.
+

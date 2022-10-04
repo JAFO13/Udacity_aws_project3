@@ -1,0 +1,3 @@
+Additional hardening solutions would be to implement CloudFront to deliver access to the S3 content without users accessing the data.
+
+You could also use a more secure version of Linux that would harden the actual OS prior to installing the application on it.
